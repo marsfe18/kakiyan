@@ -122,6 +122,7 @@
         </div> -->
 
         <input type="text" id="searchInput" placeholder="Cari...">
+        <input type="date" id="searchDate">
         <button type="button" onclick="searchTable()">Cari</button>
 
 

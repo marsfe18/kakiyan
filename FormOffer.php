@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <title>Add New Offering | TasteManhatta</title>
 
     <!-- add icon link -->
-    <link rel = "icon" href ="Image/TasteManhattaLogo.png">
+    <link rel="icon" href="Image/TasteManhattaLogo.png">
     <!-- Link Custom CSS -->
     <link rel="stylesheet" href="Style.css">
     <!-- Link Google Font -->
@@ -16,8 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Flamenco:wght@300;400&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
+
 <body class="sajian offer">
-    
+
     <!-- Preloader -->
     <?php include('preloader.php'); ?>
 
@@ -58,7 +60,7 @@
 
                     <li class="navbar-item">
                         <a href="Reserve.php" class="navbar-link">Reservation</a>
-                    </li> 
+                    </li>
 
                     <li class="navbar-item">
                         <a href="Testimoni.php" class="navbar-link">Testimonial</a>
@@ -70,18 +72,18 @@
                 </ul>
 
                 <?php
-                    session_start();
-                    if (!isset ($_SESSION['email'])){
-                        echo '<div class="header-action">';
-                        echo '  <a href="Login.php" class="login-btn">Login</a>';
-                        echo '  <a href="Sign-Up.php" class="btn btn-primary">Sign Up</a>';
-                        echo '</div>';
-                    } else{
-                        echo '<div class="header-action">';
-                        echo '  <a href="Akun.php" class="login-btn">Akun</a>';
-                        echo '  <a href="Logout.php" class="btn btn-primary">Log Out</a>';
-                        echo '</div>';
-                    }
+                session_start();
+                if (!isset($_SESSION['email'])) {
+                    echo '<div class="header-action">';
+                    echo '  <a href="Login.php" class="login-btn">Login</a>';
+                    echo '  <a href="Sign-Up.php" class="btn btn-primary">Sign Up</a>';
+                    echo '</div>';
+                } else {
+                    echo '<div class="header-action">';
+                    echo '  <a href="Akun.php" class="login-btn">Akun</a>';
+                    echo '  <a href="Logout.php" class="btn btn-primary">Log Out</a>';
+                    echo '</div>';
+                }
                 ?>
             </nav>
 
@@ -102,8 +104,8 @@
         <div class="together">
             <img src="./Image/FormAddOffer.png" class="wrapper2" alt="" style="height: 820px">
             <div class="wrapper2" style="height: 820px">
-                <form action="reserve_action.php" method = "POST" id="form" name="offer_form"> 
-                <!-- onsubmit="return validateInputs()" -->
+                <form action="Offer_add.php" method="POST" id="form" name="offer_form" enctype="multipart/form-data">
+                    <!-- onsubmit="return validateInputs()" -->
                     <div class="input-box2">
                         <span class="icon" style="background:none;"><ion-icon name="fast-food-sharp" style="color: brown;"></ion-icon></span>
                         <input id="offer" type="text" placeholder="Enter offer title" name="offer">
@@ -144,13 +146,13 @@
 
                     <div class="input-box2">
                         <span class="icon" style="background:none;"><ion-icon name="image-sharp" style="color: brown;"></ion-icon></span>
-                        <input id="photooffer" type="file" placeholder="Upload menu picture" name="photooffer" >
+                        <input id="photooffer" type="file" placeholder="Upload menu picture" name="photooffer">
                         <label>Foto Menu</label>
                         <div class="error"></div>
                     </div>
 
                     <button type="submit" class="btn-login">Tambahkan Menu</button>
-                </form> 
+                </form>
             </div>
         </div>
     </main>
@@ -166,4 +168,5 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

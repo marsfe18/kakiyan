@@ -13,7 +13,8 @@ try {
     // Proses upload gambar jika ada
     if ($_FILES['editGambar']['name'] != '') {
         $targetDir = "image/";
-        $targetFile = $targetDir . basename($_FILES["editGambar"]["name"]);
+        $filename = basename($_FILES["editGambar"]["name"]);
+        $targetFile = $targetDir . $filename;
         move_uploaded_file($_FILES["editGambar"]["tmp_name"], $targetFile);
 
         // Update data menu dengan gambar
@@ -24,7 +25,7 @@ try {
         $stmt->bindParam(':diskon', $editHargaDiskon);
         $stmt->bindParam(':deskripsi', $editDeskripsi);
         $stmt->bindParam(':deskripsi2', $editDeskripsi2);
-        $stmt->bindParam(':gambar', $targetFile);
+        $stmt->bindParam(':gambar', $filename);
         $stmt->bindParam(':menuId', $menuId);
         $stmt->execute();
     } else {

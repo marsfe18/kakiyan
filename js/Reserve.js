@@ -11,6 +11,7 @@ function searchTable() {
         tdEmail = tr[i].getElementsByTagName("td")[3];
         tdKodeBooking = tr[i].getElementsByTagName("td")[7];
 
+
         if (tdNama || tdEmail || tdKodeBooking) {
 
             txtValueNama = tdNama.textContent || tdNama.innerText;

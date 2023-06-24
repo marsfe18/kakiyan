@@ -46,7 +46,7 @@ var loadMenu = function (menuData) {
 
         var harga = document.createElement('span');
         harga.className = 'harga';
-        harga.textContent = menu.harga;
+        harga.textContent = 'Rp ' + menu.harga + ',00';
 
         var deskripsi = document.createElement('p');
         deskripsi.className = 'deskripsi';
