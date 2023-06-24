@@ -4,18 +4,20 @@ try {
     include "config_db.php";
     // Ambil data dari form
     $menuId = $_POST['menuId'];
-    $editNama = $_POST['editNama'];
-    $editHargaAsli = $_POST['editHargaAsli'];
-    $editHargaDiskon = $_POST['editHargaDiskon'];
-    $editDeskripsi = $_POST['editDeskripsi'];
-    $editDeskripsi2 = $_POST['editDeskripsi2'];
+    $editNama = $_POST['offer'];
+    $editHargaAsli = $_POST['ogprice'];
+    $editHargaDiskon = $_POST['discount'];
+    $editDeskripsi = $_POST['description_off'];
+    $editDeskripsi2 = $_POST['item'];
+    $editHemat = $_POST['saveprice'];
+
 
     // Proses upload gambar jika ada
-    if ($_FILES['editGambar']['name'] != '') {
+    if ($_FILES['photooffer']['name'] != '') {
         $targetDir = "image/";
-        $filename = basename($_FILES["editGambar"]["name"]);
+        $filename = basename($_FILES["photooffer"]["name"]);
         $targetFile = $targetDir . $filename;
-        move_uploaded_file($_FILES["editGambar"]["tmp_name"], $targetFile);
+        move_uploaded_file($_FILES["photooffer"]["tmp_name"], $targetFile);
 
         // Update data menu dengan gambar
         $query = "UPDATE offer SET nama = :nama, asli = :asli, diskon = :diskon, deskripsi = :deskripsi, deskripsi2 = :deskripsi2, gambar = :gambar WHERE id = :menuId";
@@ -42,8 +44,8 @@ try {
     }
 
     // Redirect ke halaman menu_admin.php
-    // header("Location: menu_admin.php");
-    echo "test";
+    header("Location: menu_admin.php");
+    // echo $menuId . 'bro';
     exit();
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

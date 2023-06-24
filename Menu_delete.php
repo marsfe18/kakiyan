@@ -1,7 +1,7 @@
 <?php
 // Mengecek apakah ada permintaan penghapusan yang dikirimkan
-if (isset($_POST['id'])) {
-    $id = $_POST['id'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
     try {
         include "config_db.php";
 

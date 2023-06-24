@@ -285,7 +285,7 @@
     <!-- Custom Script -->
     <script src="js/Script.js"></script>
     <script src="js/ScriptSearch.js"></script>
-    <script src="js/OfferLoad.js"></script>
+    <script src="js/OfferLoadAdmin.js"></script>
 
 
     <!-- instal ion-icon -->

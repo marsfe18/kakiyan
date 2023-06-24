@@ -366,7 +366,7 @@
     <!-- Custom Script -->
     <script src="js/Script.js"></script>
     <script src="js/ScriptSearch.js"></script>
-    <script src="js/MenuLoad.js"></script>
+    <script src="js/MenuLoadAdmin.js"></script>
 
 
     <!-- instal ion-icon -->

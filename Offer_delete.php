@@ -3,7 +3,7 @@
 try {
     include "config_db.php";
     // Ambil id menu dari form
-    $menuId = $_POST['id'];
+    $menuId = $_GET['id'];
 
     // Hapus data menu berdasarkan id
     $query = "DELETE FROM offer WHERE id = :menuId";
